@@ -1,2 +1,2 @@
 # springboot-course-examples
-Course Examples of Spring Boot
+Course Examples for Spring Boot
