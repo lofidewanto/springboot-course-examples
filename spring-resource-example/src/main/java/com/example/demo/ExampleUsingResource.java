@@ -20,6 +20,7 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -34,6 +35,9 @@ public class ExampleUsingResource {
 	@Autowired
 	private ResourceLoader resourceLoader;
 
+	@Autowired
+	private ApplicationContext applicationContext;
+
 	public Resource loadHelloWorldFileManually() {
 		return new ClassPathResource("data/file.txt");
 	}
@@ -44,6 +48,10 @@ public class ExampleUsingResource {
 
 	public Resource loadHelloWorldFileLazily() {
 		return resourceLoader.getResource("classpath:data/file.txt");
+	}
+
+	public Resource loadHelloWorldFileWithAppContext() {
+		return applicationContext.getResource("classpath:data/file.txt");
 	}
 
 }

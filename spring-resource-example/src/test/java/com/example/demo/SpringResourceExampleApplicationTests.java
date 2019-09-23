@@ -70,4 +70,13 @@ public class SpringResourceExampleApplicationTests {
 		assertThat(fileContent, equalTo("demo-file.txt Hello World!"));
 	}
 
+	@Test
+	public void loadHelloWorldFileWithAppContext() throws IOException {
+		Resource loadHelloWorldFileWithAppContext = exampleUsingResource.loadHelloWorldFileWithAppContext();
+		File file = loadHelloWorldFileWithAppContext.getFile();
+		String fileContent = new String(Files.readAllBytes(file.toPath()));
+
+		assertThat(fileContent, equalTo("demo-file.txt Hello World!"));
+	}
+
 }
