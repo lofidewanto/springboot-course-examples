@@ -30,6 +30,7 @@
 	<!-- Modules -->
 	<!-- =============================================================== -->
 	<modules>
+		<module>spring-websocket-api</module>
 		<module>spring-websocket-client</module>
 		<module>spring-websocket-server</module>
 	</modules>
