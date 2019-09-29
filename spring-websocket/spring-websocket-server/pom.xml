@@ -36,6 +36,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
+		<spring-websocket-api.version>1.0.0-SNAPSHOT</spring-websocket-api.version>
 	</properties>
 
 	<dependencies>
@@ -51,7 +52,7 @@
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>spring-websocket-api</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${spring-websocket-api.version}</version>
 		</dependency>
 
 		<dependency>
@@ -69,5 +70,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
