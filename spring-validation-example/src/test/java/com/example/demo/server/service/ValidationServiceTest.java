@@ -23,7 +23,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test(expected = ConstraintViolationException.class)
-	public void testValidateInput_Number_NotValid() {
+	public void testValidateInput_whenNumber_NotValid_thenThrowsException() {
 		Input input = new Input();
 		input.setNumberBetweenOneAndTen(11);
 
@@ -48,7 +48,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test(expected = ConstraintViolationException.class)
-	public void testValidateInput_Ip_NotValid() {
+	public void testValidateInput_whenIp_NotValid_thenThrowsException() {
 		Input input = new Input();
 		input.setIpAddress("122.121.123.1.0");
 		input.setNumberBetweenOneAndTen(10);
@@ -62,7 +62,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test(expected = ConstraintViolationException.class)
-	public void testFindByCode_Code_NotValid() {
+	public void testFindByCode_whenCode_NotValid_thenThrowsException() {
 		validationService.findByCode("Test");
 	}
 
