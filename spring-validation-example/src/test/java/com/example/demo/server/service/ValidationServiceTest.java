@@ -56,4 +56,14 @@ public class ValidationServiceTest {
 		validationService.validateInput(input);
 	}
 
+	@Test
+	public void testFindByCode_Code_Valid() {
+		validationService.findByCode("Test Lofi");
+	}
+
+	@Test(expected = ConstraintViolationException.class)
+	public void testFindByCode_Code_NotValid() {
+		validationService.findByCode("Test");
+	}
+
 }
