@@ -31,7 +31,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test
-	public void testValidateInput_Number_Valid() {
+	public void testValidateInput_whenNumber_Valid_thenSuccess() {
 		Input input = new Input();
 		input.setNumberBetweenOneAndTen(10);
 
@@ -39,7 +39,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test
-	public void testValidateInput_Ip_Valid() {
+	public void testValidateInput_whenIp_Valid_thenSuccess() {
 		Input input = new Input();
 		input.setIpAddress("192.168.178.1");
 		input.setNumberBetweenOneAndTen(10);
@@ -57,7 +57,7 @@ public class ValidationServiceTest {
 	}
 
 	@Test
-	public void testFindByCode_Code_Valid() {
+	public void testFindByCode_whenCode_Valid_thenSuccess() {
 		validationService.findByCode("Test Lofi");
 	}
 
