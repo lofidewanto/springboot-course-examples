@@ -29,5 +29,7 @@
 	<!-- =============================================================== -->
 	<modules>
 		<module>spring-resource-example</module>
+		<module>spring-websocket</module>
+		<module>spring-validation-example</module>
 	</modules>
 </project>
