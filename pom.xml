@@ -31,5 +31,6 @@
 		<module>spring-resource-example</module>
 		<module>spring-websocket</module>
 		<module>spring-validation-example</module>
+		<module>spring-conversion-example</module>
 	</modules>
 </project>
