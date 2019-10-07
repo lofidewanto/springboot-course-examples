@@ -32,6 +32,7 @@
 		<module>spring-websocket</module>
 		<module>spring-validation-example</module>
 		<module>spring-conversion-example</module>
+		<module>spring-appcontext-example</module>
 		<module>spring-security-example</module>
 	</modules>
 </project>
