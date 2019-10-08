@@ -33,6 +33,7 @@
 		<module>spring-validation-example</module>
 		<module>spring-conversion-example</module>
 		<module>spring-appcontext-example</module>
+		<module>spring-aop-example</module>
 		<module>spring-security-example</module>
 	</modules>
 </project>
