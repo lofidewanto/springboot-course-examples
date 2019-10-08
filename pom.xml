@@ -36,5 +36,6 @@
 		<module>spring-aop-example</module>
 		<module>spring-proxyfactory-example</module>
 		<module>spring-security-example</module>
+		<module>spring-mvc-oldies-example</module>
 	</modules>
 </project>
