@@ -34,6 +34,7 @@
 		<module>spring-conversion-example</module>
 		<module>spring-appcontext-example</module>
 		<module>spring-aop-example</module>
+		<module>spring-proxyfactory-example</module>
 		<module>spring-security-example</module>
 	</modules>
 </project>
