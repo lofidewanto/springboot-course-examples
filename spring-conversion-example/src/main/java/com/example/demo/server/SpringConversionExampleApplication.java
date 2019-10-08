@@ -22,7 +22,7 @@ public class SpringConversionExampleApplication {
 		ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
 
 		// For Custom Converter
-		Set<Converter<String, Employee>> converters = new HashSet<>();
+		Set<Converter<?, ?>> converters = new HashSet<>();
 		converters.add(stringToEmployeeConverter());
 		bean.setConverters(converters);
 
