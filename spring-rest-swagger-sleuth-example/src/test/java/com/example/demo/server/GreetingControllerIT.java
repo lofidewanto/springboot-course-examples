@@ -29,7 +29,7 @@ public class GreetingControllerIT {
 	@Test
 	public void test() {
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/greeting", String.class))
-				.contains("hello");
+				.contains("Hello");
 	}
 
 }

@@ -10,9 +10,9 @@ public class PersonService {
 	private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
 
 	public String hello() {
-		logger.info("Hello");
+		logger.info("PersonService Hello");
 
-		return "hello MS!";
+		return "Hello Muenster!";
 	}
 
 }
