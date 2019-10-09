@@ -22,4 +22,6 @@
                            http://www.springframework.org/schema/lang/spring-lang-3.0.xsd"
         default-autowire="no">
         
+        <context:component-scan base-package="discussion.service" />
+        
 </s:beans>
