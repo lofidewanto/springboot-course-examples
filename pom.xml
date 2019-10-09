@@ -37,5 +37,7 @@
 		<module>spring-proxyfactory-example</module>
 		<module>spring-security-example</module>
 		<module>spring-mvc-oldies-example</module>
+		<module>spring-rest-swagger-sleuth-example</module>
+		<module>spring-schedule-async-cache-example</module>
 	</modules>
 </project>
