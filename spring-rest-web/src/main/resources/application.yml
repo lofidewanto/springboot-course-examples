@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /demo
+  port: 9001
+  
+debug: false
+
+  

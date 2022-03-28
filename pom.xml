@@ -36,8 +36,10 @@
 		<module>spring-aop-example</module>
 		<module>spring-proxyfactory-example</module>
 		<module>spring-security-example</module>
-		<module>spring-mvc-oldies-example</module>
+		<!-- <module>spring-mvc-oldies-example</module> -->
 		<module>spring-rest-swagger-sleuth-example</module>
 		<module>spring-schedule-async-cache-example</module>
+		<module>spring-jpa-postgres</module>
+		<module>spring-rest-web</module>
 	</modules>
 </project>

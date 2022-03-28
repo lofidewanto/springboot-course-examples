@@ -1,0 +1,1 @@
+insert into person (age, name) VALUES (20, 'Lofi');
