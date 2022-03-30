@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        # instance-id must not be empty, must start with letter, end wit ha letter or digit, and have as interior characters ony
+        # letter, digits, and hyphen
+        instance-id: id:${random.uuid}
+        # instance-id must not be empty, must start with letter, end wit ha letter or digit, and have as interior characters ony
+        # letter, digits, and hyphen
+        serviceName: name:${spring.application.name}
+        # Consul needs this for health-check. Used for load-balancing stuff.
+        healthCheckPath: /health-check
+        register: true
+        register-health-check: true
+        deregister: true
