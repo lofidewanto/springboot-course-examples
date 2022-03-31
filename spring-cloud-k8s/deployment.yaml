@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-k8s
-          image: localhost:5000/spring-cloud-k8s:1.0.0-SNAPSHOT # Image that will be used to containers in the cluster
+          image: localhost:5000/spring-cloud-k8s:1.0.1-SNAPSHOT # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
