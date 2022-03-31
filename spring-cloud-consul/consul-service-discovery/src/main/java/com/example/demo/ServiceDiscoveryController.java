@@ -19,8 +19,8 @@ public class ServiceDiscoveryController {
 
     @GetMapping("/health-check")
     public ResponseEntity<String> myCustomCheck() {
-        String message = "Testing my healh check function";
-        return new ResponseEntity<>(message, HttpStatus.FORBIDDEN);
+        String message = "Service Discovery: testing my healh check function";
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
  
     @GetMapping("/info")

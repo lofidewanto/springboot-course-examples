@@ -22,7 +22,7 @@ public class DiscoveryClientController {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @GetMapping("/discoveryClient")
+    @GetMapping("/discovery-client")
     public String discoveryPing() throws RestClientException, ServiceUnavailableException {
         URI service = serviceUrl().map(s -> s.resolve("/ping"))
             .orElseThrow(ServiceUnavailableException::new);
@@ -35,13 +35,14 @@ public class DiscoveryClientController {
         return "pong";
     }
 
-    @GetMapping("health-check")
+    @GetMapping("/health-check")
     public ResponseEntity<String> myCustomCheck() {
-        return new ResponseEntity<>(HttpStatus.OK);
+        String message = "Discovery Client: testing my healh check function";
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
     public Optional<URI> serviceUrl() {
-        return discoveryClient.getInstances("myApp")
+        return discoveryClient.getInstances("name-service-discovery")
             .stream()
             .findFirst()
             .map(si -> si.getUri());
