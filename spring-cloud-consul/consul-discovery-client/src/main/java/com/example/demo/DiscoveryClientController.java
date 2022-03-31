@@ -6,7 +6,6 @@ import java.util.Optional;
 import javax.naming.ServiceUnavailableException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +45,7 @@ public class DiscoveryClientController {
         return discoveryClient.getInstances("name-service-discovery")
             .stream()
             .findFirst()
-            .map(ServiceInstance::getUri);
+            .map(si -> si.getUri());
     }
 
 }
