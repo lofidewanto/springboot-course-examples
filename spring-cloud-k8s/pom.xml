@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.demo</groupId>
     <artifactId>spring-cloud-k8s</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>>spring-cloud-k8s</name>
 
     <parent>

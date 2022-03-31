@@ -4,8 +4,8 @@ mvnd spring-boot:build-image
 
 https://docs.docker.com/registry/deploying
 
-docker tag docker.io/library/spring-cloud-k8s:1.0.1-SNAPSHOT localhost:5000/spring-cloud-k8s:1.0.1-SNAPSHOT
-docker push localhost:5000/spring-cloud-k8s:1.0.1-SNAPSHOT
+docker tag docker.io/library/spring-cloud-k8s:1.0.2-SNAPSHOT localhost:5000/spring-cloud-k8s:1.0.2-SNAPSHOT
+docker push localhost:5000/spring-cloud-k8s:1.0.2-SNAPSHOT
 
 kubectl apply -f deployment.yaml
 kubectl get deployments
