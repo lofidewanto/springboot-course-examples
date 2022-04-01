@@ -1,8 +1,9 @@
 ## Build image
 
-mvnd spring-boot:build-image
-
+Info zu Docker Regustry:
 https://docs.docker.com/registry/deploying
+
+mvnd spring-boot:build-image
 
 docker tag docker.io/library/spring-cloud-k8s:1.0.2-SNAPSHOT localhost:5000/spring-cloud-k8s:1.0.2-SNAPSHOT
 docker push localhost:5000/spring-cloud-k8s:1.0.2-SNAPSHOT
@@ -21,4 +22,6 @@ kubectl get nodes -o wide
 
 Port forwarding to localhost
 
-http://localhost:56413/messages
+http://localhost:port/messages
+
+Achtung: Portnummer muss noch gefunden werden!
