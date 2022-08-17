@@ -9,15 +9,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
 import redis.embedded.RedisServer;
 import redis.embedded.RedisServerBuilder;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = ClassMode.BEFORE_CLASS)
-public class RedisMessageListenerManualTest {
+@SpringBootTest
+public class RedisMessageListenerTest {
 
     static RedisServer redisServer;
 

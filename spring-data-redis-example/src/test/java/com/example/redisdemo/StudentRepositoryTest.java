@@ -3,18 +3,39 @@ package com.example.redisdemo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
+import redis.embedded.RedisServer;
+import redis.embedded.RedisServerBuilder;
 
 @SpringBootTest
+@ActiveProfiles({ "test" })
 public class StudentRepositoryTest {
 
     @Autowired
     StudentRepository studentRepository;
+
+    static RedisServer redisServer;
+
+    @BeforeAll
+    public static void startRedisServer() throws IOException {
+        redisServer = new RedisServerBuilder().port(6379).setting("maxmemory 128M").build();
+        redisServer.start();
+    }
+
+    @AfterAll
+    public static void stopRedisServer() throws IOException {
+        redisServer.stop();
+    }
 
     @Test
     public void whenSavingStudent_thenAvailableOnRetrieval() throws Exception {

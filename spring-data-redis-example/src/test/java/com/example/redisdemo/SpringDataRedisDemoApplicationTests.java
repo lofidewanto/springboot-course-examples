@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import redis.embedded.RedisServer;
 import redis.embedded.RedisServerBuilder;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 public class SpringDataRedisDemoApplicationTests {
     
     private static RedisServer redisServer;
