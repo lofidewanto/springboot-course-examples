@@ -36,6 +36,8 @@ public class RedisMessageListenerTest {
 
     @Test
     public void testOnMessage() throws Exception {
+        RedisMessageListener.messageList.clear();
+
         String message = "Message " + UUID.randomUUID();
         redisMessagePublisher.publish(message);
 
