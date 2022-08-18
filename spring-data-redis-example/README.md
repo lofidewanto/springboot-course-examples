@@ -11,3 +11,6 @@ spring.redis.timeout=60000
 # The source article
 - https://www.baeldung.com/spring-data-redis-properties
 - https://www.baeldung.com/spring-data-redis-tutorial
+
+# Message receiver with @Bean
+- https://spring.io/guides/gs/messaging-redis
