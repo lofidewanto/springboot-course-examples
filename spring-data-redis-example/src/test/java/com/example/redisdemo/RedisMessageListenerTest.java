@@ -39,7 +39,7 @@ public class RedisMessageListenerTest {
         String message = "Message " + UUID.randomUUID();
         redisMessagePublisher.publish(message);
 
-        Thread.sleep(1000);
+        Thread.sleep(10000);
 
         assertTrue(RedisMessageListener.messageList.get(0).contains(message));
     }

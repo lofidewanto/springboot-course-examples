@@ -25,6 +25,7 @@ public class SpringDataRedisDemoApplicationTests {
     public static void stopRedisServer() {
         redisServer.stop();
     }
+    
     @Test
     public void whenSpringContextIsBootstrapped_thenNoExceptions() {
     }
