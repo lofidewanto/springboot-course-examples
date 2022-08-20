@@ -42,6 +42,8 @@
 		<module>spring-jpa-postgres</module>
 		<module>spring-rest-web</module>
 		<module>spring-spel-example</module>
+		<module>spring-reactive-reactor-hello</module>
+		<module>spring-webflux</module>
 		<module>spring-data-redis-example</module>
 	</modules>
 </project>
