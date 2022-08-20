@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import reactor.core.publisher.ConnectableFlux;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 @SpringBootTest
 class SpringReactiveReactorHelloApplicationTests {
@@ -171,6 +172,17 @@ class SpringReactiveReactorHelloApplicationTests {
 		publish.subscribe(value -> System.out.println("Sub 2: " + value));
 
 		publish.connect();
+	}
+
+	@Test
+	void test_concurrency() {
+		List<Integer> elements = new ArrayList<>();
+
+		Flux.just(1, 2, 3, 4)
+				.log()
+				.map(i -> i * 2)
+				.subscribeOn(Schedulers.parallel())
+				.subscribe(elements::add);
 	}
 
 }
