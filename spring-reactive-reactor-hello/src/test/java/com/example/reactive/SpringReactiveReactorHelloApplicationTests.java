@@ -1,6 +1,13 @@
 package com.example.reactive;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import reactor.core.publisher.Flux;
@@ -35,4 +42,85 @@ class SpringReactiveReactorHelloApplicationTests {
 		});
 	}
 
+	@Test
+	void test_Hello_World_Mono_Error() {
+		// Create a Mono that emits an integer.
+		Mono<Integer> dataStream = Mono.error(new RuntimeException("Error"));
+
+		// Subscribe to the Mono and print out item.
+		dataStream.log().subscribe(prog -> {
+			System.out.println("Hello World " + prog);
+		}, error -> {
+			System.out.println("Error " + error);
+		});
+	}
+
+	@Test
+	void test_Interface_Subscriber() {
+		List<Integer> elements = new ArrayList<>();
+
+		Flux.just(1, 2, 3, 4)
+				.log()
+				.subscribe(new Subscriber<Integer>() {
+					@Override
+					public void onSubscribe(Subscription s) {
+						s.request(Long.MAX_VALUE);
+					}
+
+					@Override
+					public void onNext(Integer integer) {
+						elements.add(integer);
+					}
+
+					@Override
+					public void onError(Throwable t) {
+					}
+
+					@Override
+					public void onComplete() {
+					}
+				});
+
+		assertEquals(elements.size(), 4);
+	}
+
+	@Test
+	void test_Backpressure() {
+		List<Integer> elements = new ArrayList<>();
+
+		Flux.just(1, 2, 3, 4)
+				.log()
+				.subscribe(new Subscriber<Integer>() {
+
+					private Subscription subscription;
+
+					int onNextAmount;
+
+					@Override
+					public void onSubscribe(Subscription subscription) {
+						this.subscription = subscription;
+						subscription.request(2);
+					}
+
+					@Override
+					public void onNext(Integer integer) {
+						elements.add(integer);
+
+						onNextAmount++;
+						if (onNextAmount % 2 == 0) {
+							subscription.request(2);
+						}
+					}
+
+					@Override
+					public void onError(Throwable t) {
+					}
+
+					@Override
+					public void onComplete() {
+					}
+				});
+
+		assertEquals(elements.size(), 4);
+	}
 }
