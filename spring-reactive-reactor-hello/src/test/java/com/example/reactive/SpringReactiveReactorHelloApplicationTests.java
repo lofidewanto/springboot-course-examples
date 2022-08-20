@@ -15,22 +15,22 @@ class SpringReactiveReactorHelloApplicationTests {
 
 	@Test
 	void test_Hello_World_Flux() {
-		// Create a Flux that emits a sequence of random integers.
+		// Create a Flux that emits a sequence of random strings.
 		Flux<String> dataStream = Flux.just("Java", "C++", "Python", "Ruby");
 
 		// Subscribe to the Flux and print out each item.
-		dataStream.subscribe(prog -> {
+		dataStream.log().subscribe(prog -> {
 			System.out.println("Hello World " + prog);
 		});
 	}
 
 	@Test
 	void test_Hello_World_Mono() {
-		// Create a Flux that emits a sequence of random integers.
+		// Create a Mono that emits an integer.
 		Mono<Integer> dataStream = Mono.just(1);
 
-		// Subscribe to the Flux and print out each item.
-		dataStream.subscribe(prog -> {
+		// Subscribe to the Mono and print out item.
+		dataStream.log().subscribe(prog -> {
 			System.out.println("Hello World " + prog);
 		});
 	}
