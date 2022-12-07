@@ -45,5 +45,6 @@
 		<module>spring-reactive-reactor-hello</module>
 		<module>spring-webflux</module>
 		<module>spring-data-redis-example</module>
+		<module>spring-register-beans</module>
 	</modules>
 </project>
