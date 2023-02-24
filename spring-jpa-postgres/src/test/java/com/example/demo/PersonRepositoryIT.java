@@ -17,41 +17,39 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @DataJpaTest
 @Testcontainers
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-class PersonRepositoryTest {
+class PersonRepositoryIT {
 
-  @Container
-  static PostgreSQLContainer database = new PostgreSQLContainer("postgres:12")
-      .withDatabaseName("springboot")
-      .withPassword("springboot")
-      .withUsername("springboot");
+	@Container
+	static PostgreSQLContainer database = new PostgreSQLContainer("postgres:12").withDatabaseName("springboot")
+			.withPassword("springboot").withUsername("springboot");
 
-  @DynamicPropertySource
-  static void setDatasourceProperties(DynamicPropertyRegistry propertyRegistry) {
-    propertyRegistry.add("spring.datasource.url", database::getJdbcUrl);
-    propertyRegistry.add("spring.datasource.password", database::getPassword);
-    propertyRegistry.add("spring.datasource.username", database::getUsername);
+	@DynamicPropertySource
+	static void setDatasourceProperties(DynamicPropertyRegistry propertyRegistry) {
+		propertyRegistry.add("spring.datasource.url", database::getJdbcUrl);
+		propertyRegistry.add("spring.datasource.password", database::getPassword);
+		propertyRegistry.add("spring.datasource.username", database::getUsername);
 
-    propertyRegistry.add("spring.flyway.url", database::getJdbcUrl);
-    propertyRegistry.add("spring.flyway.password", database::getPassword);
-    propertyRegistry.add("spring.flyway.user", database::getUsername);
-  }
+		propertyRegistry.add("spring.flyway.url", database::getJdbcUrl);
+		propertyRegistry.add("spring.flyway.password", database::getPassword);
+		propertyRegistry.add("spring.flyway.user", database::getUsername);
+	}
 
-  @Autowired
-  private PersonRepository orderRepository;
+	@Autowired
+	private PersonRepository orderRepository;
 
-  @Test
-  void shouldReturnPersons() {
-    orderRepository.save(createPerson("Hans", 20));
+	@Test
+	void shouldReturnPersons() {
+		orderRepository.save(createPerson("Hans", 20));
 
-    List<Person> persons = orderRepository.findAll();
+		List<Person> persons = orderRepository.findAll();
 
-    assertEquals(2, persons.size());
-  }
+		assertEquals(2, persons.size());
+	}
 
-  private Person createPerson(String name, int age) {
-    Person person = new Person();
-    person.setName("Hans");
-    person.setAge(42);
-    return person;
-  }
+	private Person createPerson(String name, int age) {
+		Person person = new Person();
+		person.setName("Hans");
+		person.setAge(42);
+		return person;
+	}
 }
