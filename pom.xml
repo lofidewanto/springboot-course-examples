@@ -46,5 +46,6 @@
 		<module>spring-webflux</module>
 		<module>spring-data-redis-example</module>
 		<module>spring-register-beans</module>
+		<module>spring-profile-example</module>
 	</modules>
 </project>
