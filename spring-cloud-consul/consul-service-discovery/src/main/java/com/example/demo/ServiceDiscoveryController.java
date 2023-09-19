@@ -14,7 +14,7 @@ public class ServiceDiscoveryController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "pong";
+        return "pong: server";
     }
 
     @GetMapping("/health-check")

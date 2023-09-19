@@ -32,7 +32,7 @@ public class DiscoveryClientController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "pong";
+        return "pong: client";
     }
 
     @GetMapping("/health-check")
