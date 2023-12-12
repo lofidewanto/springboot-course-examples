@@ -27,9 +27,9 @@ import io.restassured.RestAssured;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class ConfigIT {
+class UserControllerIT {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ConfigIT.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerIT.class.getName());
 
     @LocalServerPort
     private int port;
