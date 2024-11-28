@@ -16,7 +16,7 @@
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<spring.ws.version>2.0.4.RELEASE</spring.ws.version>
 		<hibernate.version>4.0.1.Final</hibernate.version>
-		<junit.version>4.10</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<log4j.version>1.2.16</log4j.version>
 		<slf4j.version>1.5.5</slf4j.version>
 		<aspectj.version>1.6.10</aspectj.version>
