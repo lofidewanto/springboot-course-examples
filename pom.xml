@@ -49,5 +49,7 @@
 		<module>spring-profile-example</module>
 		<module>spring-fullmode-singleton-config-demo</module>
 		<module>spring-datajpatest</module>
+		<module>spring-testcontainer-mysql</module>
+		<module>spring-testcontainer-keycloak</module>
 	</modules>
 </project>
