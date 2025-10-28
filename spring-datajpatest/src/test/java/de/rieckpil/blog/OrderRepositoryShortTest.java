@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         "spring.datasource.url=jdbc:tc:postgresql:12:///springboot"
 })
 class OrderRepositoryShortTest {
+
     @Autowired
     private OrderRepository orderRepository;
 

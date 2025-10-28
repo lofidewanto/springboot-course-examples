@@ -18,11 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Testcontainers
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class OrderRepositoryTest {
+
     @Container
     static PostgreSQLContainer database = new PostgreSQLContainer("postgres:12")
             .withDatabaseName("springboot")
             .withPassword("springboot")
             .withUsername("springboot");
+
     @Autowired
     private OrderRepository orderRepository;
 
