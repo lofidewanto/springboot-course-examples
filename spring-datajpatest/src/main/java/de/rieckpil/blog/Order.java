@@ -1,14 +1,13 @@
 package de.rieckpil.blog;
 
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
+import com.vladmihalcea.hibernate.type.json.JsonType;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "orders")
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 public class Order {
 
     @Id
@@ -18,7 +17,7 @@ public class Order {
     @Column(nullable = false, unique = true)
     private String trackingNumber;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private String items;
 
