@@ -1,6 +1,5 @@
 package de.rieckpil.blog;
 
-import com.vladmihalcea.hibernate.type.json.JsonType;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
